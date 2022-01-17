@@ -46,9 +46,9 @@ class Tinysource
      */
     public function tinysource(&$params, &$obj)
     {
-        $this->conf = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_min.']['tinysource.'];
+        $this->conf = $GLOBALS['TSFE']->tmpl->setup['plugin.']['tx_min.']['tinysource.'] ?? null;
 
-        if ($this->conf['enable'] && !$GLOBALS['TSFE']->config['config']['disableAllHeaderCode']) {
+        if ($this->conf !== null && $this->conf['enable'] && !$GLOBALS['TSFE']->config['config']['disableAllHeaderCode']) {
             $source = $GLOBALS['TSFE']->content;
 
             $headOffset = strpos($source, '<head');
