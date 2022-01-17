@@ -15,7 +15,7 @@ $GLOBALS['TYPO3_CONF_VARS']['FE']['cssCompressHandler'] = T3\Min\Minifier::class
 $GLOBALS['TYPO3_CONF_VARS']['FE']['jsCompressHandler'] = T3\Min\Minifier::class .  '->minifyJavaScript';
 
 // Register tiny source
-if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-all'])) {
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-all'] ?? null)) {
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-all'] = [];
 }
 array_unshift(
